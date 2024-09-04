@@ -177,6 +177,242 @@ const altrum=arr_3.reduce((i1,i2)=>{
 )
 console.log(altrum)
 
+const tax ={
+    calc(){
+        console.log("hey tax is 30 percent%")
+    }
+}
+
+const student_1 ={
+    name:"anil"
+
+}
+ student_1.__proto__ = tax;
+
+
+const sport_1 ={
+
+swimming(){
+
+
+    console.log("hey are you doing swimming")
+}
+,
+
+skating(){
+
+console.log("hey are you performing skating")
+
+}
+
+};
+
+
+const student_3 =
+{
+
+name : "aanya"
+
+};
+
+
+student_3.__proto__ = sport_1
+
+student_3.skating()
+
+
+class Employee{
+
+constructor(){
+
+    console.log("hey this is constructor")
+}
+
+employe_name(){
+
+    console.log("Hey store employee name ")
+}
+employee_dep(){
+
+    console.log("hey store all employee departments name")
+}
+
+employee_salary(sal){
+    this.sal = sal 
+    console.log(sal,"this is sal")
+}
+
+}
+
+let bankemployess = new Employee();
+bankemployess.employee_salary(300);
+bankemployess.employe_name();
+let hotelemployess =new  Employee();
+
+
+class college {
+tag = 23;
+constructor(branch,year){
+    this.branch=branch
+    this.year=year
+}
+lib(){
+
+    console.log("this is a lib ")
+}
+
+canteen(){
+    console.log(this.branch,this.year,"both are wriiten from child constructor")
+
+
+}
+}
+
+
+class university extends college{
+
+constructor(branch ,year){
+    super(branch,year);
+    
+
+}
+
+college_city(){
+
+console.log("which city college is located  ")
+console.log(super.tag,"calling with super keyword")//this super here will not be used to call class level variables in JS 
+console.log(this.tag,"calling with out super keyword")
+}
+
+
+}
+
+let obj1= new university("mech",2021);
+obj1.lib();
+obj1.canteen();
+obj1.college_city();
+
+//===============================================================
+
+
+setTimeout(()=>{
+ console .log("hey hello time out")
+},5000);
+
+
+
+//==================================================================
+
+
+const hello =()=>{
+    console.log("hey hi hello")
+};
+
+setTimeout(hello,2000);
+
+
+//==================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
