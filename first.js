@@ -1,72 +1,71 @@
 console.log("Hi this is First edit  js code by Anil");
 
-const alphamap ={
+const alphamap = {
 
-age:20,
-name:"manikandhan",
-sex:"male",
-salary:"25k Dhirams"
+    age: 20,
+    name: "manikandhan",
+    sex: "male",
+    salary: "25k Dhirams"
 
 }
 
 
 console.log(alphamap.age)
-console.log(alphamap.name,alphamap.salary,alphamap.sex)
+console.log(alphamap.name, alphamap.salary, alphamap.sex)
 alert("show mw the pop up");
 let name = prompt("Hey hi");
 console.log(name);
-let cat=20;
+let cat = 20;
 
-if(cat/5==0){
+if (cat / 5 == 0) {
     console.log("Hey this cat is multiple of 5 ")
 }
 else {
     console.log("Hey this cat is not  multiple of 5 ")
 
 }
-let i=0;
+let i = 0;
 
-for (let count = 0; count <10; count++) {
+for (let count = 0; count < 10; count++) {
 
     console.log("count is 10");
 }
 
-let sigma =10
+let sigma = 10
 
-while (sigma<25) {
-    sigma=sigma+1;
-    console.log ("console is printing Sigma ",sigma);
+while (sigma < 25) {
+    sigma = sigma + 1;
+    console.log("console is printing Sigma ", sigma);
 }
-let delta=20
+let delta = 20
 do {
     console.log("hello printing once value of delta from do loop ")
-} while (delta>90){
+} while (delta > 90) {
 
     console.log("Hi print delta in while loop ")
 }
- name = "university"
+name = "university"
 for (let i of name) {
-    console.log("i","===",i)
-    
+    console.log("i", "===", i)
+
 }
 
 let student =
 {
 
-"name":"Anil",
-"age":36,
-"gender":"male"
+    "name": "Anil",
+    "age": 36,
+    "gender": "male"
 
 }
 
-for (let val in student)
-{
-console.log("val value is ",val)
+for (let val in student) {
+    console.log("val value is ", val)
 }
 
-for(let key in student){
+for (let key in student) {
 
-    console.log("key in student     :",key)
+    console.log("key in student     :", key)
 }
 
 /*for(let number = 0 ;number <= 100 ;i++)
@@ -79,7 +78,7 @@ console.log("print the even number",number)
 
 }*/
 
-let marks =[10,20,30,90];
+let marks = [10, 20, 30, 90];
 let element;
 for (let index = 0; index < marks.length; index++) {
     element = marks[index];
@@ -88,55 +87,54 @@ for (let index = 0; index < marks.length; index++) {
 for (const element of marks) {
 
     console.log(element)
-    
+
 }
-let myarray =[10,20,30,40];
-let sum =0;
+let myarray = [10, 20, 30, 40];
+let sum = 0;
 for (const element of myarray) {
 
-    sum=sum+element;
-    
+    sum = sum + element;
+
 }
-console.log("avg is",sum/myarray.length);
+console.log("avg is", sum / myarray.length);
 
-console.log(`avg marks = ${sum/myarray.length}`);
+console.log(`avg marks = ${sum / myarray.length}`);
 
 
-let beta ="skbm";
+let beta = "skbm";
 console.log(beta)
 
-beta =30;
+beta = 30;
 console.log(beta)
 
-function my_func()
-{
+function my_func() {
 
     console.log("hey hi hello");
     console.log("make in india.");
 }
 my_func();
 
-function my_func_1(messg){
+function my_func_1(messg) {
     console.log(`hey hi this is message of ${messg}`)
 }
 
 my_func_1("make in UAE");
 
-function mysum(a,b){
-    console.log(`print a +b =${a+b}`)
+function mysum(a, b) {
+    console.log(`print a +b =${a + b}`)
 }
-mysum(9,3)
+mysum(9, 3)
 
 
-function my_sum_returnig(a,b){
+function my_sum_returnig(a, b) {
 
-value_a =a+b;
-return value_a
+    value_a = a + b;
+    return value_a
 
 
 }
 
-let valve= my_sum_returnig(80,80);
+let valve = my_sum_returnig(80, 80);
 
 console.log(valve);
 
@@ -149,61 +147,61 @@ function mul(a,b){
 
 */
 
-const hepta = (a,b)=>{
+const hepta = (a, b) => {
     //console.log(a*b);
-    return a*b;
+    return a * b;
 }
-let values_2 =hepta(14,5);
+let values_2 = hepta(14, 5);
 console.log(values_2)
 
 
-const printhello = () =>  {
+const printhello = () => {
     console.log("jheloo world")
 };
 
-let arr = [2,3,4,5,6,7,8,9,10]
- let myarr= arr.filter((val)=>{
-   return val%2==0;
-  }
+let arr = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+let myarr = arr.filter((val) => {
+    return val % 2 == 0;
+}
 );
 console.log(myarr)
 
-let arr_3= [2,3,44,100,6,77,999,7,4]
+let arr_3 = [2, 3, 44, 100, 6, 77, 999, 7, 4]
 
-const altrum=arr_3.reduce((i1,i2)=>{
+const altrum = arr_3.reduce((i1, i2) => {
 
-    return i1>i2?i2:i1
+    return i1 > i2 ? i2 : i1
 }
 )
 console.log(altrum)
 
-const tax ={
-    calc(){
+const tax = {
+    calc() {
         console.log("hey tax is 30 percent%")
     }
 }
 
-const student_1 ={
-    name:"anil"
+const student_1 = {
+    name: "anil"
 
 }
- student_1.__proto__ = tax;
+student_1.__proto__ = tax;
 
 
-const sport_1 ={
+const sport_1 = {
 
-swimming(){
+    swimming() {
 
 
-    console.log("hey are you doing swimming")
-}
-,
+        console.log("hey are you doing swimming")
+    }
+    ,
 
-skating(){
+    skating() {
 
-console.log("hey are you performing skating")
+        console.log("hey are you performing skating")
 
-}
+    }
 
 };
 
@@ -211,7 +209,7 @@ console.log("hey are you performing skating")
 const student_3 =
 {
 
-name : "aanya"
+    name: "aanya"
 
 };
 
@@ -221,73 +219,73 @@ student_3.__proto__ = sport_1
 student_3.skating()
 
 
-class Employee{
+class Employee {
 
-constructor(){
+    constructor() {
 
-    console.log("hey this is constructor")
-}
+        console.log("hey this is constructor")
+    }
 
-employe_name(){
+    employe_name() {
 
-    console.log("Hey store employee name ")
-}
-employee_dep(){
+        console.log("Hey store employee name ")
+    }
+    employee_dep() {
 
-    console.log("hey store all employee departments name")
-}
+        console.log("hey store all employee departments name")
+    }
 
-employee_salary(sal){
-    this.sal = sal 
-    console.log(sal,"this is sal")
-}
+    employee_salary(sal) {
+        this.sal = sal
+        console.log(sal, "this is sal")
+    }
 
 }
 
 let bankemployess = new Employee();
 bankemployess.employee_salary(300);
 bankemployess.employe_name();
-let hotelemployess =new  Employee();
+let hotelemployess = new Employee();
 
 
 class college {
-tag = 23;
-constructor(branch,year){
-    this.branch=branch
-    this.year=year
-}
-lib(){
+    tag = 23;
+    constructor(branch, year) {
+        this.branch = branch
+        this.year = year
+    }
+    lib() {
 
-    console.log("this is a lib ")
-}
+        console.log("this is a lib ")
+    }
 
-canteen(){
-    console.log(this.branch,this.year,"both are wriiten from child constructor")
-
-
-}
-}
+    canteen() {
+        console.log(this.branch, this.year, "both are wriiten from child constructor")
 
 
-class university extends college{
-
-constructor(branch ,year){
-    super(branch,year);
-    
-
-}
-
-college_city(){
-
-console.log("which city college is located  ")
-console.log(super.tag,"calling with super keyword")//this super here will not be used to call class level variables in JS 
-console.log(this.tag,"calling with out super keyword")
+    }
 }
 
 
+class university extends college {
+
+    constructor(branch, year) {
+        super(branch, year);
+
+
+    }
+
+    college_city() {
+
+        console.log("which city college is located  ")
+        console.log(super.tag, "calling with super keyword")//this super here will not be used to call class level variables in JS 
+        console.log(this.tag, "calling with out super keyword")
+    }
+
+
 }
 
-let obj1= new university("mech",2021);
+let obj1 = new university("mech", 2021);
 obj1.lib();
 obj1.canteen();
 obj1.college_city();
@@ -295,23 +293,181 @@ obj1.college_city();
 //===============================================================
 
 
-setTimeout(()=>{
- console .log("hey hello time out")
-},5000);
+setTimeout(() => {
+    console.log("hey hello time out")
+}, 5000);
 
 
 
 //==================================================================
 
 
-const hello =()=>{
+const hello = () => {
     console.log("hey hi hello")
 };
 
-setTimeout(hello,2000);
+setTimeout(hello, 2000);
 
 
-//==================================================================
+//=========================call -  back -hell =========================================
+function getdata(data, getnextdata) {
+
+    setTimeout(() => {
+        console.log("data", data);
+        if (getnextdata) {
+            getnextdata();
+        }
+    }, 2000);
+
+}
+
+
+getdata(300, () => {
+    getdata(400, () => {
+        getdata(500)
+    })
+});
+
+//===================================Promise    ===============================
+
+let promise = new Promise((resolve, reject) => {
+    console.log("hey i am a Promise");
+    resolve("hey this reslove 123");
+    //reject("hey some exception occured");
+})
+
+
+
+
+
+function getmydata(mydata, Nextdata) {
+
+    return new Promise((resolve, reject) => {
+
+        setTimeout(() => {
+
+            console.log("data is coming from promised statement : ", mydata)
+
+        }, 2000);
+
+        resolve("sucess")
+
+        if (Nextdata) {
+            Nextdata();
+
+        }
+
+    });
+
+}
+
+//getmydata(900);
+getmydata(500, 900);
+
+//###########################Type of method Writings structure ######################
+
+function getalpha_1() {
+    console.log("ahlla");
+}
+
+
+const getbeta = () => {
+    console.log("get beta fish")
+}
+//#################################################Promises############
+
+let megapromise = () => {
+
+    return new Promise((resolve, reject) => {
+
+        console.log("hey this is mega promise experiment")
+        resolve("success response from Network")
+        //reject("No any message from network ")
+
+    })
+
+}
+let smallpromise = megapromise();
+
+smallpromise.then((res) => {
+    console.log("promise fullfilled", res)
+});
+
+smallpromise.catch((err) => {
+    console.log("hey this is small promise failure", err)
+});
+
+//***********************Chaining Process of promises ****************/
+
+function synchro_1() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log("hey this is coming from Synchro_1 ");
+            resolve("success from Synchro_1")
+        }, 2000);
+
+    });
+}
+
+function synchro_2() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log("hey this is coming from synchro_2")
+            resolve("sucess from Syncho_2")
+        }, 2000)
+    });
+}
+
+console.log("fetch the data from Sync1");
+
+synchro_1().then((res) => {
+    console.log("hey this is inside p1 then method ")
+    synchro_2().then((res) => {
+        console.log("hey this is inside p1 then method ")
+    })
+});
+
+
+function api() {
+
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log("hey hi this is weather api promise");
+            resolve(200);
+        }, 2000);
+    });
+}
+
+async function getmyweatherapi() {
+    await api();
+}
+
+getmyweatherapi();
+//************************fetch Api  */
+
+const URL = "https://cat-fact.herokuapp.com/facts";
+//let Promise = fetch(URL);
+//console.log(Promise);
+const factpara = document.querySelector("#factor");
+const btn = document.querySelector("#butter_button");
+
+const getfact = async () => {
+    console.log("hey fetching API please wait for 2 sec .......")
+    let response = await fetch(URL);
+    console.log(response);
+    let data = await response.json();
+    console.log(data[0].text, "hey is it that")
+    //confirm.log(data)
+    factpara.innerText = data[1].text;
+
+};
+
+//getfact();
+btn.addEventListener("click", getfact);
+
+
+
+
 
 
 
