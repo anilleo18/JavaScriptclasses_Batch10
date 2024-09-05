@@ -467,6 +467,218 @@ btn.addEventListener("click", getfact);
 
 
 
+//****************************V2.0 Batch 10 classes */
+
+var brow = "firfox";
+var brow = "chrome";
+console.log(brow);//IF YOU SEE JS ALLOW RE DECLARATION WHERE AS JAVA DOESN'T ALLOW YOU 
+
+let pillar = "hey anil how are you ";
+let number_9 = 90;
+if (number_9 > 89) {
+
+    let Pole = "hey suni how are you ";
+}
+console.log("print the right value :", pillar)
+//console.log("hey where is the pole:", pole)// Becuase pole is block level variable only 
+//****************************Let Redeclaration*/once let is declared you cant redecalred you can re iniialitixze
+
+let Arrow = "hi ";
+//let Arrow="hello";
+Arrow = "hey hi how do you do ";
+console.log("we are redcalring but doing re initializing ", Arrow);
+//*****************************const key word its like final key word in java**************************************/
+const welcomeword = "hi welcome to hotel";
+//welcomeword = "hello come in side hotel";//TypeError: Assignment to constant variable.at first.js:494:13
+console.log(welcomeword);
+// so constant once declared it is final 
+
+// so finally Let we can reinitailaize but const we cant do it ***************************
+var soup;
+console.log("soup", soup); //undefined
+let sour;
+console.log("sour", sour); //undefined
+//const salt;  ** Always decalre const variables .............
+
+function checkage(age) {
+
+    if (age > 24) {
+        console.log("hey you can vote ");
+
+    } else {
+        console.log("hey you cant vote");
+
+    }
+
+}
+checkage(25);
+
+//*****************************Loops*************************************/
+// for (let i = 0; i <= 5; i++) {
+//     console.log(i)
+
+// }
+
+const myarray_3 = [100, 200, 300, 400, 500];
+
+for (const e of myarray_3) {
+    console.log(e)
+}
+
+for (let i = 0; i < myarray_3.length; i++) {
+
+    console.log(myarray_3[i])
+}
+
+let p = 20;
+while (p < 25) {
+    p++
+    console.log("my p ", p)
+
+}
+let arrowbounce = 25;
+do {
+    console.log("hey this is do while loop and logic is false and i am executing it once")
+
+} while (arrowbounce > 25);
+console.log("hey know it not greater than 25")
+
+const mac_browsig = ["chrome", "safari", "firefox", "Brave"];
+for (const e of mac_browsig) {
+    console.log(e)
+    if (e == "firefox") {
+
+        console.log("hey i am satisfied with browser :", e)
+        break;
+
+    }
+
+
+}
+
+//**************************How to create a object in JS and Iterarte it for loop */
+//of vs in : of is used to iterate array where in is used to iterate object 
+
+const bank = {
+    name: "adcb",
+    yearofborn: 1989,
+    place: "abudabhi",
+    type: "commercial-bank"
+}
+
+for (const key in bank) {
+    console.log(key, "==================", bank[key]);
+}
+
+//************************************Play with Array Guys *********************
+
+// push : add element to array 
+
+let arr_1 = ["anil", "sunil", "vineel"];
+arr_1.push("navya");
+console.log("pushing after:", arr_1)
+
+//pop : remove last element from array
+
+let arr2 = ["hike", "mike", "bike", "Rike"];
+arr2.pop();
+console.log(arr2);
+
+//shift: remove first element from array
+let arr3 = ["orange", "mango", "jackfruit", "pista"]
+arr3.shift();
+console.log(arr3);
+
+//un-shit : add element to array ij zero th index 
+let arr4 = ["orange", "mango", "jackfruit", "pista"];
+arr4.unshift("parrotcolor");
+console.log(arr4);
+console.log(arr4.length)
+
+//splice : remove elements from certain positionand oadd new element 
+
+let arr5 = ['coke', 'pepsi', 'buvonto', 'maza']
+arr5.splice(2, 3, 'goldspot');
+console.log("drinks adeed after splice", arr5);
+
+//slice: gives out new subset of array 
+
+let arr6 = ['rhino', 'carrot', 'keera', 'onion', 'raddish', 'gobi']
+let arr7 = arr6.slice(2, 4);
+console.log(arr7);
+
+//index of 
+
+let arr8 = ['rhino', 'carrot', 'keera', 'onion', 'raddish', 'gobi'];
+let arr9 = arr8.indexOf('gobi');
+console.log(arr9)
+
+
+//check for not present element 
+
+let notpresent_element = arr8.indexOf('chilli');
+console.log("when element is not presented", notpresent_element);
+
+let arr_11 = ['rhino', 'carrot', 'keera', 'onion', 'raddish', 'gobi', 'keera'];
+let number_firstindex = arr_11.indexOf('keera');
+console.log("hey this is firstindex", number_firstindex);
+
+
+let number_secondindex = arr_11.indexOf('keera', arr_11.indexOf('keera') + 1);
+console.log("hey this is my second index", number_secondindex)
+
+//includes
+let arr_12 = ['rhino', 'carrot', 'keera', 'onion', 'raddish', 'gobi', 'keera'];
+var flag = arr_12.includes("onion");
+console.log("flag of veggies includes function", flag);
+
+//for each operation
+
+arr_12.forEach((e) => {
+    console.log(e);
+
+});
+
+let num_arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+//printing 5th table 
+num_arr.forEach((e) => {
+
+    console.log(e, "xxxx", 5, "=", e * 5)
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
