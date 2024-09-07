@@ -756,6 +756,7 @@ console.log("hey Mutiple fuction with Aroow ", multiplefunc);
 
 
 // Anonymous Function and using Map function to do square root  : 
+//in map we have anonymous fuction and it is behaving like call back 
 
 let sqrt_arr = [1, 2, 3, 4, 5, 6, 7]
 const square_root = sqrt_arr.map(function (e) {
@@ -765,7 +766,7 @@ console.log("square rooting all numbers", square_root);
 
 //with for each fuction .but it will provide Un defined check why ? hw?
 
-const new_sqrt = sqrt_arr.forEach((e) => e * e)
+const new_sqrt = sqrt_arr.forEach((e) => { return e * e })
 
 console.log("square new rooting all numbers", new_sqrt);
 //with for loop
@@ -774,6 +775,30 @@ for (const element of sqrt_arr) {
     console.log("hey i am doing with for each loop", element * element);
 
 }
+
+//Recurrsive Fuction 
+function factorial(n) {
+
+    if (n === 1 || n === 0) {
+        return 1
+    }
+    else {
+        return n * factorial(n - 1)
+    }
+
+}
+
+console.log("factorial of 5", factorial(5));
+
+// Higher order function calling one high oreder function form other function :
+function Adddtion(a, b) {
+    return a + b;
+}
+function operate(functionname, a, b) {
+    functionname(a, b);
+}
+const myaddfunc = operate(Adddtion, 3, 4);
+console.log("my higher order fucntion is ", myaddfunc)
 
 
 
