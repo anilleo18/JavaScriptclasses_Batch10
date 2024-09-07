@@ -487,6 +487,7 @@ let Arrow = "hi ";
 //let Arrow="hello";
 Arrow = "hey hi how do you do ";
 console.log("we are redcalring but doing re initializing ", Arrow);
+
 //*****************************const key word its like final key word in java**************************************/
 const welcomeword = "hi welcome to hotel";
 //welcomeword = "hello come in side hotel";//TypeError: Assignment to constant variable.at first.js:494:13
@@ -645,6 +646,144 @@ num_arr.forEach((e) => {
 
     console.log(e, "xxxx", 5, "=", e * 5)
 });
+
+//****************************************************************************
+//Map Filter Reduce :
+let number_1 = [1, 2, 3, 4, 5];
+
+let Adding_with_5 = number_1.map((e) => e + 5)
+console.log("Adding number with 5", Adding_with_5);
+//*************************************************************************** 
+let number_2 = [2, 3, 4, 5, 6, 55, 66, 77, 88, 99];
+let new_filter_array = number_2.filter((e) => e % 2 == 0);
+console.log(new_filter_array);
+//***************************************************************************
+
+let farenheittemp = [23, 45, 67, 77]
+
+function fareheinheightfunc(feta) {
+    return (feta - 32) * (5 / 9);
+
+}
+console.log("fareheight numbers", farenheittemp.map(fareheinheightfunc))
+
+let student_col = [{ name: "sharma", age: 30, gender: "male" }, { name: "varma", age: 30, gender: "female" }, { name: "kurma", age: 45, gender: "female" },
+{ name: "kailash", age: 16, gender: "female" }];
+
+let new_studs = student_col.filter((stud) => {
+    return stud.age > 16 && stud.gender == 'female'
+})
+console.log("new studs :", new_studs)
+
+//****************************************************************************************
+
+let small_arr = [2, 3, 4, 5, 5, 66, 7, 88, 99, 0, 45];
+let flag_1 = small_arr.every((e) => e < 600);
+console.log("small every", flag_1);
+
+let flag_2 = small_arr.every((e) => e < 100);
+console.log("small_arr_lesser", flag_2);
+
+//********************************************************************some**********************
+
+small_arr = [2, 3, 4, 5, 55, 66, 7, 88, 99, 0, 45];
+
+let some_e = small_arr.some((e) => e % 2 == 0)
+console.log(some_e)
+
+//***************************find-reverse-Indexoff -last index off********************************
+
+
+
+let findelement = small_arr.find((e) => e % 5 == 0)
+console.log("finding first element", findelement);
+
+
+let fruits = ["apple", "mango", "berry", "grape", "apple", "pineapple"]
+console.log("index of first apple", fruits.indexOf("apple"));
+console.log("Last index of first apple", fruits.lastIndexOf("apple"));
+console.log(fruits.reverse())
+
+fruits = ["apple", "mango", "berry", "grape", "apple", "pineapple", "1234", "jackfruit", "T11233"]
+console.log("After sorting all the fruits:", fruits.sort())
+
+
+//***************Function Declarations*************************************************************************************
+//Type ofMethod -1
+function alpha_m1(a, b) {
+    return a * b;
+}
+let prod = alpha_m1(9, 11);
+console.log("prodcut is ", prod)
+
+//Type of method -2 
+function just_printing() {
+    console.log("Hey hi ");
+}
+
+//Type of method -3
+//Anonymous Function :calling using vairable name :
+
+const muller = function (x, y) {
+    return x * y
+        ;
+}
+const mul = muller(number_9, 11);
+console.log("hey muller fuction is writiing", mul);
+
+
+//Arrow Function Very very imp guys .lIsten carefully :
+
+const dividing_func = (x, y) => x / y;
+const finalconst = dividing_func(2000, 30);
+console.log("hey final const after dividing with arrow fuction is ", finalconst);
+
+
+
+const multi_arrow = (x, y) => {
+    return x * y
+}
+
+const multiplefunc = multi_arrow(200, 800);
+console.log("hey Mutiple fuction with Aroow ", multiplefunc);
+
+//calling via cinstructor method : down a is 1st param,b is 2nd param , 3rd will be the body 
+//const subtract = new Function(a, b, 'return a-b;');
+//console.log("hey hi subtract", subtract)
+
+
+//IIFE and Geberator Function Type 
+
+
+// Anonymous Function and using Map function to do square root  : 
+
+let sqrt_arr = [1, 2, 3, 4, 5, 6, 7]
+const square_root = sqrt_arr.map(function (e) {
+    return e * e
+})
+console.log("square rooting all numbers", square_root);
+
+//with for each fuction .but it will provide Un defined check why ? hw?
+
+const new_sqrt = sqrt_arr.forEach((e) => e * e)
+
+console.log("square new rooting all numbers", new_sqrt);
+//with for loop
+for (const element of sqrt_arr) {
+
+    console.log("hey i am doing with for each loop", element * element);
+
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
