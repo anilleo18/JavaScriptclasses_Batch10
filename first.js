@@ -798,7 +798,154 @@ function operate(functionname, a, b) {
     functionname(a, b);
 }
 const myaddfunc = operate(Adddtion, 3, 4);
-console.log("my higher order fucntion is ", myaddfunc)
+console.log("my higher order fucntion is ", myaddfunc);
+//*************Arrow Functions **************/
+const adder = (num1, num2) => num1 + num2;
+const prv = adder(90, 10);
+console.log("Adding with two numbers in a fucntion Prv ", prv)
+
+const no_fun = () => "Hey Hi hello this is no param fun";
+console.log(no_fun())
+
+// other way of writing function :*******************************
+const student_fullname = {
+    firstname: "Anil",
+    lastname: "purushothapatnam"
+}
+
+const myfunc_fullname = (student_fullname) => `${student_fullname.firstname} ${student_fullname.lastname}`;
+console.log(myfunc_fullname(student_fullname));
+
+// Defualt values vs values we are inserting 
+
+const sporting = (username = 'Anil', sport = 'tennis') => `hey ${username} the game you like most is ${sport}`;
+const R1 = sporting();
+console.log(R1);
+console.log(sporting("navya", "swimming"));
+
+//rest params 
+const summer = (...numbers) => numbers.reduce((acc, num) => acc + num, 0);
+const mytotal = summer(20, 3, 40, 5);
+console.log(mytotal)
+
+// //java code for above problem:
+// int[] array = {1, 2, 3, 4, 5};
+// int sum = Arrays.stream(array).reduce(0, Integer::sum);
+// int[] array = {1, 2, 3, 4, 5};
+// list<Integerge> l1=Arrays.Aslist(array)
+// int sum = l1.stream().reduce(0, (a,b)=>a+b);
+
+const browse = (browser = "chrome", ...details) => {
+    console.log(`browser for this operation is ${browser}`);
+    console.log(`this operation is using `, details);
+}
+browse();
+browse("firfox", 'v2.0', 'headless', 'modeheadless');
+
+//object creation in JS *************************************
+//1st way 
+const myobj_1 = {
+
+    name: "anil",
+    age: "35",
+    studies: "dublin"
+}
+console.log(myobj_1.name, myobj_1.age, myobj_1.studies);
+
+//2nd way via constructor function ****************************
+function car(brand, model, make) {
+    this.brand = brand;
+    this.make = make;
+    this.model = model
+}
+
+const car_obj = new car("benz", "34lac", 2019);
+const car_obj2 = new car("BMW", "35lac", 2020);
+
+console.log(car_obj.make)
+console.log('car brand is :', car_obj.brand)
+
+console.log(car_obj2.make)
+console.log('car brand is :', car_obj2.brand)
+
+//class style 
+
+class Bank {
+
+    constructor(bankname, bankprod) {
+        this.bankname = bankname;
+        this.bankprod = bankprod;
+    }
+
+    getdetails() {
+
+        console.log(`hey hello this is ${this.bankname} and ${this.bankprod}`)
+    }
+}
+//creating obj of the class ......
+
+const bankobj3 = new Bank("aib", "studentloan");
+console.log(bankobj3.bankname, '-----', bankobj3.bankprod);
+bankobj3.getdetails();
+
+//using factory method create a obj 
+function createstore(brandname, city) {
+    return {
+        brandname: brandname,
+        city: city,
+        getstoreinfo: function () {
+            console.log(`store name is ${this.brandname} and store city is in ${this.city}`)
+        }
+    }
+
+
+}
+
+const obj4 = createstore("ratnadeep", "guntur");
+obj4.getstoreinfo();
+const obj4_1 = createstore("vijaya", "vijayawada");
+obj4_1.getstoreinfo();
+
+//type of variables :
+
+let alpha = 90;
+alpha = 'anil'
+console.log(alpha)
+
+const arr_22 = [1, 2, 3, 4, 5]
+console.log(typeof arr_22)//object ans
+
+x = {
+    name: 'anil'
+}
+console.log(typeof x)//object ans
+
+function alpha_009(name) {
+    console.log("hey hello this ----");
+}
+console.log(typeof alpha_009)//fucntion ans
+
+// overloaded function 
+function browserchallenge(browser_name, browser_version, browser_remoteexecution) {
+
+    if (typeof browser_version == 'string' && browser_remoteexecution == 'boolean') {
+        console.log(`browser_name =${browser_version}`)
+
+    }
+    else {
+        console.log(`browser_name =${browser_version}`)
+
+    }
+
+}
+browserchallenge("chrome", "v2.0", true);
+
+
+
+
+
+
+
 
 
 
