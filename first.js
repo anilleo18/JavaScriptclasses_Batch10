@@ -940,6 +940,105 @@ function browserchallenge(browser_name, browser_version, browser_remoteexecution
 }
 browserchallenge("chrome", "v2.0", true);
 
+//Basic examples of classes and how do you use it 
+
+class sweetshop {
+
+    constructor(sweetname, taste, region, cost) {
+        this.sweetname = sweetname;
+        this.taste = taste;
+        this.region = region;
+        this.cost = cost;
+
+
+    }
+
+    make_newsweet() {
+
+        console.log(`make a new sweet with all const ingridents ${this.region}`);
+
+
+    }
+}
+
+const s1 = new sweetshop("kalakarn", "sweet", "telugu", 250);
+console.log("sweet name is :  ", s1.sweetname);
+console.log(s1.make_newsweet());
+
+const s2 = new sweetshop("basanti", "sweet", "bengali", 900);
+console.log("sweet name is :  ", s2.sweetname);
+console.log(s2.make_newsweet());
+
+//Inheritance concepts in Java Script ******************
+
+//p1--->c1---->ectend c2 mutiple inheritance not possible in JS like java we can have only multi level inheritance 
+
+//can Access grandparent methods by grand kids 
+
+class Vechicle {
+
+    constructor(color, model, enginecc) {
+
+        this.enginecc = enginecc;
+        this.color = color;
+        this.model = model
+    }
+    getinfo_vechile() {
+        console.log(`hey print all vech details ${this.color},${this.enginecc},${this.model}`)
+    }
+}
+
+class ship extends Vechicle {
+
+    constructor(color, model, enginecc, load) {
+        super(color, model, enginecc);
+        this.load = load;
+
+    }
+
+    getship_load() {
+        console.log(`hey hi hello load ${this.load}`);// Always we need to Access with this keyword or else we get ,load not defined  
+    }
+}
+
+class Aero extends Vechicle {
+
+    constructor(color, model, enginecc, company) {
+        super(color, model, enginecc);
+        this.company = company;
+
+    }
+
+    getAero_brand() {
+        console.log(`hey hi hello load ${this.company}`);
+    }
+
+
+}
+
+const ship1 = new ship("black", 2024, "5GT", "2000MT");
+ship1.getinfo_vechile();
+ship1.getship_load();
+
+const Aero_obj = new Aero("white", 2021, "2000000CC", "Boeing");
+Aero_obj.getinfo_vechile();
+Aero_obj.getAero_brand();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
