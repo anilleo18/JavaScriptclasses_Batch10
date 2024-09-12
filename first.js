@@ -1024,12 +1024,136 @@ const Aero_obj = new Aero("white", 2021, "2000000CC", "Boeing");
 Aero_obj.getinfo_vechile();
 Aero_obj.getAero_brand();
 
+console.log("hey hi hello dude")
 
 
+//Valuable and usable tips for js programming
+
+const arr_dup = [1, 2, 3, 4, 3, 2, 5, 6, 78, 9, 0]
+const arr_unique = [...new Set(arr_dup)]
+console.log(arr_unique)
 
 
+// const array = [1, 2, 3, 2, 3, 2, 5, 6, 2, 7, 7, 7, 7];
+// const uniqueArray = [...new Set(array)];
+// console.log(uniqueArray);
 
 
+//convert number to string 
+const num = 45;
+const strtonum = String(num);
+console.log("this is converted to str", strtonum)
+
+//float to int 
+const floatternum = 30.999;
+const float_to_int = parseInt(floatternum);
+console.log(float_to_int)
+
+//check whether this is anumber or not 
+const var_is_num = 34;
+if ((!isNaN(var_is_num)) && typeof var_is_num == "number") {
+    console.log("yeah this is a number")
+}
+else {
+    console.log("sorry this is not a number")
+}
+
+//swap number using with out 3rd variable 
+
+x = 90;
+y = 80;
+[x, y] = [y, x]
+console.log(x, y)
+
+// check if an objevct has a proerty
+
+const automobile = {
+    name: "toyota",
+    engine: "2000cc"
+}
+
+if (automobile.hasOwnProperty('engine')) {
+    console.log("yeas it has property")
+}
+
+//Remove particular vallue from array 
+const arr_99 = [1, false, "hello"]
+const arr_100 = arr_99.filter(Boolean);
+console.log(arr_100);
+
+
+//convert string to uppercase 
+
+const str_touppercase = "hey hello how are you!"
+const upper = str_touppercase.toUpperCase();
+console.log(upper)
+
+
+const lang = ['arabic', 'benagali', 'telugu', 'hindi']
+
+if (lang.includes('arabic')) {
+    console.log("yes lang is present")
+}
+
+const empty_arr = []
+
+if (empty_arr == 0) {
+    console.log("yeah it is empty ")
+}
+
+// rand numers betwen max and min 
+let min = 20
+let max = 40
+const rand_num = Math.floor(Math.random() * (max - min + 1)) + min;
+console.log("the tand num is :", rand_num)
+
+//str to float 
+const str = "321"
+const to_float = parseFloat(str);
+console.log(to_float)
+
+//join all elements in an array 
+
+const list_join = ['helo', 'did', 'you', 'bike']
+const postjoin = list_join.join(' ')
+console.log(postjoin)
+
+//In Java String str = string.join(' ',list_join);
+
+//clonig array in Js 
+
+const wheel = ['sccoter', 'bike', 'motocycle', 'car']
+const my_wheels = [...wheel]
+console.log("wheelers are :", my_wheels)
+
+//convert obj to array 
+
+const emp = {
+    name: "anil",
+    work: "sf",
+    dob: "18Aug"
+
+}
+
+console.log(Object.keys(emp))
+console.log(Object.values(emp))
+console.log(Object.entries(emp))
+//Date and time 
+const currentday = new Date();
+console.log("current date is " + currentday.toLocaleString())
+
+//truncate the array 
+
+const valtrunk = [1, 2, 3, 4, 5, 6, 7, 8, 9, 99]
+valtrunk.length = 4;
+console.log(valtrunk)
+
+const valtrunk_1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 99]
+
+
+//retrive last element from array in JS and Java 
+console.log(valtrunk_1.slice(-1))
+//in java with out using size mylist.get(mylist.size()-1)??
 
 
 
