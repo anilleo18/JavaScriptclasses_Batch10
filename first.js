@@ -1155,9 +1155,472 @@ const valtrunk_1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 99]
 console.log(valtrunk_1.slice(-1))
 //in java with out using size mylist.get(mylist.size()-1)??
 
+//*************static vs Instance calling   */
+
+class cart {
+
+    static wheels = 4;
+
+    constructor(name, color, wheels) {
+        this.name = name,
+            this.color = color;
+        this.wheels = 50;
+    }
+
+    static engine() {
+        console.log("hey this is engine static method")
+    }
+
+
+    start() {
+        console.log("hey this is instance method ")
+    }
 
 
 
+
+
+
+}
+
+const c2 = new cart("alpharomeo", "white", 20);
+c2.start();
+console.log(c2.color)
+cart.engine();
+console.log(cart.wheels)
+//==================================Over-ridding =========================
+class carrier {
+
+
+    constructor(model, color) {
+        this.model = model,
+            this.color = color
+    }
+
+
+    engine() {
+        console.log("hey hi engine over ride")
+    }
+
+}
+
+class Audi extends carrier {
+
+    engine() {
+        console.log("hey hi over ride ")
+    }
+
+
+
+}
+
+const audier = new Audi();
+audier.engine()
+
+const carry = new carrier();
+carry.engine();
+
+//===========================Basic call back example ================================
+
+function alpha_romeo(name, callbackfunction) {
+    console.log(`name of the car is ${name}`);
+    callbackfunction()
+}
+
+function alpharomeoengine() {
+
+    console.log(`hey alpha romeo engine in V12 Disel`)
+}
+
+alpha_romeo("model is 2018", alpharomeoengine)//if we gave alpharomeoengine()inside instead of alpharomeenginecallbackfunction is not a function at alpha_rom
+
+
+
+function Mrcedes(color, callback) {
+    setTimeout(function () {
+        //this is a Async function Guys .     v.v.vimp please listen .....
+        console.log("hey tcolor of mercedes is ", color);
+        callback("v1.9 Petrol")
+    }, 2000);
+
+
+
+}
+
+function Mercedersenginecallback(model) {
+    console.log(`hey this name is ${model}`)
+}
+
+Mrcedes("white", Mercedersenginecallback)
+
+
+//Little bit advance call Back but very very easy ===================================
+
+function fecthuserid(userID, callback) {
+    setTimeout(function () {
+        const users = {
+            1: { name: "Anil", school: "MSRP" },
+            2: { name: "sunil", school: "LPS" }
+
+        }
+
+        const Myid = users[userID];
+
+        if (Myid) {
+            callback(Myid, null)
+        }
+        else {
+            callback(null, "404")
+
+        }
+    }, 4000);
+
+}
+
+
+function Myhandler(user, error) {
+
+    if (user) {
+        console.log("user", user);
+    }
+    else {
+        console.log("my error is :", error)
+
+    }
+
+
+}
+
+fecthuserid(2, Myhandler);
+//fecthuserid(3, Myhandler);
+
+// Sync vs Async **************************************
+
+//Sync Example:
+
+// console.log("Start")
+// for (let i = 0; i < 25; i++) {
+//     console.log(i)
+
+// }
+// console.log("end")
+
+console.log("start of async function ");
+setTimeout(() => {
+    console.log("hey hello after 2 sec ");
+}, 2000);
+console.log("End of async function");
+
+//############################# Promise Functions calling #######################
+
+//Read this Example carefully and Practise :
+
+const rand_promise = new Promise((resolve, reject) => {
+
+    console.log("entered into promise section");
+
+    setTimeout(() => {
+        const rand = Math.floor(Math.random() * 2);
+
+        if (rand % 2 == 0) {
+            resolve(rand)
+        }
+        else {
+            reject(new Error("hey the value is Not Even " + rand))
+        }
+    }, 2000);
+
+
+});
+
+rand_promise.then(result => {
+
+    console.log("hey our promise is fullfilled" + result)
+})
+
+rand_promise.catch(error => {
+    console.error("Hey Its not resolved and Error is " + error)
+})
+
+//Ster 2 : Some what advanced Concept : chaning promises
+
+
+function alpha_odd(number, delayvalue) {
+
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+
+            if (number > 50) {
+
+                resolve(number)
+
+            }
+            else {
+
+                reject(new Error("hey hello this number is less than 50 and the number is " + number));
+            }
+
+        }, delayvalue);
+
+    });
+
+}
+
+alpha_odd(90, 2000)
+    .then(result => {
+        console.log("yes the number is greater and number is step 1  " + result);
+        return alpha_odd(200, 1000);//here chaining started here if we provide 20 we will go to catch orelse if will go to below then function and throw result there 
+
+    })
+    .then(result => {
+        console.log("hey this is step 2 " + result);
+
+    }).
+
+    catch(error => {
+
+        console.error("promise the chainning error " + error)
+    })
+
+//Promise..All *****************************************************
+
+// const funtion_A = () => {
+
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+
+//             resolve("function_A resolved a promise ")
+
+
+//         }, 2000)
+
+
+//     });
+
+
+// };
+
+// const fucntion_B = () => {
+
+
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve("hey Function_b is resolved ")
+
+//         }, 1000);
+
+
+//     })
+
+
+// };
+
+
+// const function_c = () => {
+
+//     new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve("hey function_c is resolved ")
+
+//         }, 1000);
+//     });
+
+// }
+
+// Promise.all([function_c(), funtion_A(), fucntion_B]).
+//     then((dataarray) => {
+//         console.log(dataarray);
+
+//     }).catch((error => {
+//         console.log("error is : ", error)
+//     }));
+
+//Promise race(who comes frst they will executes here ) ===========================
+
+const resolve_mypromise = () => {
+
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+
+            resolve("hey this is resolved promise form race")
+
+        }, 2000);
+
+    })
+
+}
+
+const rehected_mypromise = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            reject(new Error("hey race is rejected  due to it executed first"))
+        }, 1000);
+
+    })
+}
+
+Promise.race([resolve_mypromise(), rehected_mypromise()])
+    .then(result => {
+
+        console.log(result)
+    })
+    .catch(error => {
+        console.log(error)
+
+    })
+
+
+//promise.any //who comes first is not matter it will wait untill first resolved promise and executes script 
+
+// const getProfileInfo = () => {
+
+
+//     return new Promise((resolve, reject) => {
+
+//         setTimeout(() => {
+
+//             resolve("hey the profile info is succesfful")
+
+//         }, 4000);
+
+//     })
+
+// }
+
+// const getUserInfo = () => {
+
+//     return new Promise((resolve, reject) => {
+
+//         setTimeout(() => {
+
+//             reject(new Error("Promise Any getUserInfo function is caught "))
+
+//         }, 1000);
+
+//     })
+
+// }
+
+// const getPaymentInfo = () => {
+
+
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+
+//             reject(new Error("hey this is Rejected Info"))
+
+//         }, 1500);
+//     })
+
+// }
+
+// Promise.any(getPaymentInfo(), getProfileInfo(), getUserInfo()).then(result => {
+//     console.log("hey Promise any is resolving ", result)
+// }).catch(error => {
+//     console.log(error)
+// })
+/// Async fucntions with promise retunr  **************************************************
+
+
+function get_Userinfo() {
+
+    return new Promise((resolve, reject) => {
+
+        const randomInther = Math.random();
+        setTimeout(() => {
+
+            if (randomInther > 0.5) {
+                resolve("hey the User vechile Number  is " + randomInther);
+
+
+            } else {
+
+                //reject(new Error("hey it vechile and error is " + error));
+
+                throw new Error("Hey its wetter")
+
+
+            }
+
+        }, 2000);
+    })
+
+}
+
+async function get_full_details() {
+    try {
+        const alldetails = await get_Userinfo();
+        console.log(alldetails)
+    } catch (error) {
+        console.log("error of vechile is " + error)
+
+    }
+
+}
+
+get_full_details();
+
+
+//============================Fetch Api return we are using async await and method params in the fucntion  =================
+
+const fetch_myApi = async (a, b) => {
+
+    try {
+
+        const response = await fetch('https://reqres.in/api/users?page=2');
+
+        if (response.ok) {
+
+            console.log("Hey the status code is 200");
+            const jsondata = await response.json();
+            console.log("jsondata:", jsondata);
+            console.log(a + b);
+
+        }
+        else {
+
+            throw new Error("hey status code is wrong");
+        }
+
+
+    } catch (error) {
+
+        console.log(error);
+
+    }
+}
+
+fetch_myApi(3000, 4000);
+
+//============================================Destructuirng of Array =========
+
+const arr_des = ['anil', 'sunil', 'panil', 'nathaniel'];
+const [xr, yr, zr, wr] = arr_des;
+console.log(xr)
+//============================ String Imp fucntions ================
+
+let name_str = "Anil_purushothapatnam"
+console.log(name_str.length);
+console.log(name_str.charAt(5));
+console.log(name_str.toUpperCase());
+console.log(name_str);
+console.log(name_str.slice(2, 9));
+console.log(name_str.substring(2, 9));
+console.log(name_str.slice(3, -4));
+console.log(name_str.concat("navya"));
+console.log(name_str.split("_"))
+console.log(name_str.includes("puru"))
+console.log(name_str.search("puru"))
+console.log(name_str.replace("puru", "guru"))
+console.log(name_str.trimStart())
+console.log(name_str.trimEnd())
+console.log(name_str.trim())
+console.log(name_str.padStart(5, "***"))
+console.log(name_str.startsWith("Ani"))
+console.log(name_str.endsWith("a"))
+console.log(name_str.repeat())
+console.log(name_str.indexOf("_"))
+console.log(name_str.lastIndexOf("a"))
 
 
 
